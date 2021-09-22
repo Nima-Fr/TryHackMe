@@ -1,5 +1,7 @@
 # All in One
 
+## Description
+
 This box's intention is to help you practice several ways in exploiting a system. There is few intended paths to exploit it and few unintended paths to get root.
 
 Try to discover and exploit them all. Do not just exploit it using intended paths, hack like a pro and enjoy the box!
