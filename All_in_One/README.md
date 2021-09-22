@@ -268,7 +268,7 @@ cat hint.txt
 Elyana's user password is hidden in the system. Find it ;)
 ~~~
 
-I used find command to find the files owned by "elyana" and found the password:
+I used find command to find the files owned by "elyana" and found the file containing the password:
 
 ~~~
 bash-4.4$ find / -user elyana -type f 2>/dev/null
