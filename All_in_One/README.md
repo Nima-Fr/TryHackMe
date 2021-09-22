@@ -333,6 +333,6 @@ THM{uem2wigbuem2wigb68sn2j1ospi868sn2j1ospi8}
 
 Root Flag: `THM{uem2wigbuem2wigb68sn2j1ospi868sn2j1ospi8}`
 
-## D0N3!  ;)
+## D0N3!  ; )
 
-Hope you had fun hacking this box and have a nice one! :)
+Hope you had fun hacking this box and have a nice one! : )
