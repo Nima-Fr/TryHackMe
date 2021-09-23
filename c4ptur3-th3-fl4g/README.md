@@ -63,7 +63,7 @@ Encrypted:
 
     Ebgngr zr 13 cynprf!
 
-ROT13 which is a simple letter substitution cipher.
+ROT13 which is a simple letter substitution method.
 
 Decrypted: `Rotate me 13 places!`
 
@@ -73,7 +73,7 @@ Encrypted:
 
     *@F DA:? >6 C:89E C@F?5 323J C:89E C@F?5 Wcf E:>6DX
 
-This looked weird but still semms like letter substitution. It is ROT47.
+This looked weird but still seems like letter substitution. It is ROT47.
 
 Decrypted: `You spin me right round baby right round (47 times)`
 
@@ -94,7 +94,7 @@ Encrypted:
 
     85 110 112 97 99 107 32 116 104 105 115 32 66 67 68
 
-This just decimal
+Decimal it is.
 
 Decrypted: `Unpack this BCD`
 
@@ -120,9 +120,11 @@ A spectrogram is a visual representation of the spectrum of frequencies of a sig
 
 ## T2.1
 
-First we downlaod the attached file (secretaudio.wav). We know that there is a hidden message inside it. I used a tool called `sonic-visualiser`. There online tools for this purpose too which will do the job.
+First we downlaod the attached file (secretaudio.wav). We know that there is a hidden message inside it. I used a tool called `sonic-visualiser`. There are online tools for this purpose too which will do the job.
 
 First we open the file from the tollbar. Then we go to "Layer" section and choose "Add Spectrogram". Then we zoom in to stretch it and now we can read the message inside it.
+
+![alt text](./files/sonic_screenshot.png)
 
 Answer: `Super Secret Message`
 
@@ -134,7 +136,7 @@ Steganography is the practice of concealing a file, message, image, or video wit
 
 ## T3.1
 
-After downloading the attached file (stegosteg.jpg), I used a tool called `steghide` which can extract the files inside an image or audio. BY running `steghide --extract -sf stegosteg.jpg`, the file, hidden inside the image (steganopayload2248.txt) is revealed and it containes the answer.
+After downloading the attached file (stegosteg.jpg), I used a tool called `steghide` which can extract the files inside an image or audio file. BY running `steghide --extract -sf stegosteg.jpg`, the hidden file inside the image (steganopayload2248.txt) would be revealed and it contains the answer.
 
 Answer: `SpaghettiSteg`
 
