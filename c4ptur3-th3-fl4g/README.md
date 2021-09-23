@@ -150,6 +150,25 @@ Security through obscurity is the reliance in security engineering on the secrec
 
 Obviously we download the file first (meme.jpg). We can't extract anything from it, so I ran `strings` command on it which prints the sequences of printable characters in files and the answer was in the bottom of the output.
 
+~~~
+┌──(user㉿B0B)-[~/…/walkThroughs/thm/c4ptur3-th3-fl4g/files]
+└─$ strings meme.jpg               
+JFIF
+"Exif
+
+[REDACTED]
+
+vA}=
+*s&__
+@9Xs
+{@84
+2$Es
+i2Mc
+IEND
+"AHH_YOU_FOUND_ME!" 
+hackerchat.png
+~~~
+
 Filename: `hackerchat.png`
 
 
