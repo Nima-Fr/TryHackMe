@@ -1,3 +1,3 @@
 # TryHackMe
-beginner friendly walkthroughs on tryhackme challenges
+Beginner friendly walkthroughs on tryhackme challenges
 ""\\\_( ' _ ' )_/""
