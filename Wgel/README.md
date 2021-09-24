@@ -27,7 +27,7 @@ Nmap scan shows two open ports:
 
 # Web
 
-The ssh service requiers creds, so i moved on to http. I started enumerating by running gobuster on the web page. While it was running I started checking the source code and found a possible username: `jessie`
+The ssh service requires creds, so i moved on to the web page. I started enumerating by running gobuster on the web page. While it was running I started checking the source code and found a username: `jessie`
 
 Gobuster found `/sitemap`. I ran gobuster on it again and ended up finding a very useful file.
 
