@@ -135,7 +135,7 @@ Jonah's password: `spiderman123`
 
 ## User Flag
 
-I used the creds to login to admin panel from `/administrator/` and now I can change the one of the files to a reverse shell and gain a shell. I went to *Extentions > Templates > Templates* and chose the first one and from the list on the left I chose *index.php* and changed it to a php reverse shell which you can get it [here](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php). (Don't forget to cahnge the IP and port.) Then I clicked on *Save* and started a listener and then called the shell:
+I used the creds to login to admin panel from `/administrator/` and now I can change the one of the files to a reverse shell and gain a shell. I went to `Extentions > Templates > Templates` and chose the first one and from the list on the left I chose *index.php* and changed it to a php reverse shell which you can get it [here](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php). (Don't forget to cahnge the IP and port you want to get the shell on.) Then I clicked on `Save` and started a listener and then called the shell:
 
 listener:
 ~~~
@@ -170,7 +170,7 @@ uid=48(apache) gid=48(apache) groups=48(apache)
 sh-4.2$
 ~~~
 
-Now I need to escalate my privilege. first I checked `'home` to find users and the only user is `jjameson`. I checked some of the files and in `/var/www/html/configuration.php` found the password for the database.
+Now I need to escalate my privilege. first I checked `/home` to find users and the only user is `jjameson`. I checked `/var/www/html/configuration.php` and found the password for the database.
 
 ~~~
 sh-4.2$ cat configuration.php
@@ -222,7 +222,7 @@ User flag: `27a260fe3cba712cfdedb1c86d80442e`
 
 ## Root Flag
 
-Now that we have the creds (`jjameson:nv5uz9r3ZEDzVjNu`), we can leave our reverse shell and directly connenct to SSH and the first thing I check is sudo permission:
+Now that we have the creds (`jjameson:nv5uz9r3ZEDzVjNu`), we can leave our reverse shell and directly connenct to SSH and the first thing I check is my sudo permission:
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/thm/dailyBugle/files]
 └─$ ssh jjameson@10.10.74.217                                                                                   130 ⨯
@@ -241,7 +241,7 @@ User jjameson may run the following commands on dailybugle:
 [jjameson@dailybugle ~]$ 
 ~~~
 
-We can run `yum` as sudo and no password. I checked [GTFOBins](https://gtfobins.github.io/gtfobins/yum/#sudo) for yum and there are two privesc with yum. I tried one of them and it worked:
+We can run `yum` as sudo with no password. I checked [GTFOBins](https://gtfobins.github.io/gtfobins/yum/#sudo) for yum and there are two privesc with yum. I tried one of them and it worked:
 
 ~~~
 [jjameson@dailybugle ~]$ TF=$(mktemp -d)
@@ -281,4 +281,6 @@ Root Flag: `eec3d53292b1821868266858d7fa6f79`
 
 # D0N3!  ; )
 
-Hope you had fun hacking. Have a good one!  : )
+Thanks to the creaters of this room!
+
+Hope you had fun hacking adn have a good one!  : )
