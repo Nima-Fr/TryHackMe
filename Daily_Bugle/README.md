@@ -5,7 +5,10 @@ Compromise a Joomla CMS account via SQLi, practise cracking hashes and escalate 
 
 # [Task 1] Deploy
 
-We start with a nmap scan.
+We start with an Nmap scan and it shows three open ports:
+* 22 ssh
+* 80 http
+* 3306 mysql
 
 ~~~
 PORT     STATE SERVICE VERSION
@@ -25,7 +28,7 @@ PORT     STATE SERVICE VERSION
 3306/tcp open  mysql   MariaDB (unauthorized)
 ~~~
 
-Nmap shows three open ports. I start with enumerating the web page. Right after opening the web page we see a title saying "Spider-Man robs bank!" which is the answer of the first question.
+I start with enumerating the web page. Right after opening the web page we see a title saying "Spider-Man robs bank!" which is the answer of the first question.
 
 ![alt text](./files/task1.png)
 
