@@ -88,7 +88,7 @@ Joomla version: `3.7.0`
 
 ## Exploit
 
-Now that we have the full version, we can search for an exploit. I found a python exploit [here](https://github.com/stefanlucas/Exploit-Joomla). (You can also find it in the "/files" directory.) After running the exploit, we get a username (`jonah`) and his password hash.
+Now that we have the full version, we can search for an exploit. I found a python exploit [here](https://github.com/stefanlucas/Exploit-Joomla). (You can also find it in the "[files](./files/joomblah.py)" directory.) After running the exploit, we get a username (`jonah`) and his password hash.
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/thm/dailyBugle/files]
