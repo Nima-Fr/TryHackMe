@@ -116,7 +116,7 @@ Now that we have the full version, we can search for an exploit. I found a pytho
   -  Extracting sessions from fb9j5_session
 ~~~
 
-I saved the hash in a file called "johan.hash" and cracked using john and rockyou wordlist:
+I saved the hash in a file called "johan.hash" and cracked it using john and rockyou wordlist:
 
 ~~~
 john jonah.hash --wordlist=/usr/share/wordlists/rockyou.txt
