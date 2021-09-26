@@ -15,7 +15,7 @@ This is an easy box which you can learn/practice the skills above.
 
 # [Task 2] Reconnaissance 
 
-We start with a nmap scan to find open ports to work with.
+We start with an Nmap scan to find open ports to work with.
 
 ## Initial Scan
 
@@ -43,7 +43,7 @@ Linux ditribution: `Ubuntu`
 
 ## Web enumeration
 
-Next we run gobuster on the webpage to find directories. (No need to say that you can use other tools like dirbuster)
+Next we run gobuster on the webpage to find directories.
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkThroughs/thm/Brute_It]
@@ -97,7 +97,7 @@ After it is done, we find a hidden directory. This directory is a login page and
         </form>
     </div>
 
-    <!-- Hey john, if you do not remember, the username is admin -->
+    <!-- Hey john, if you do not remember, the username is admin -->       <--------------------
 </body>
 </html>
 ~~~
@@ -105,7 +105,7 @@ After it is done, we find a hidden directory. This directory is a login page and
 
 # [Task 3] Getting a shell
 
-Now that we have a username, we can try to brute force the password. I use a popular tool called `hydra` which you can get it [here](https://github.com/vanhauser-thc/thc-hydra). First I checked the request form and the response to see the parameters because we need it for hydra. You can check them from *network* section in inspect mode after sending a request. Now we can run hydra. I used rockyou wordlist which you can download [here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiH0dP-m5XzAhVGxhoKHb_XA_YQFnoECAYQAQ&url=https%3A%2F%2Fgithub.com%2Fbrannondorsey%2Fnaive-hashcat%2Freleases%2Fdownload%2Fdata%2Frockyou.txt&usg=AOvVaw3snAERl1mU6Ccr4WFEazBd).
+Now that we have a username, we can try to brute force the password. I use a popular tool called `hydra` which you can get it [here](https://github.com/vanhauser-thc/thc-hydra). First I checked the request form and the response to see the parameters to know how to send requests with hydra. You can check them from *network* section in inspect mode after sending a request. Now we can run hydra. I used rockyou wordlist which you can download [here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiH0dP-m5XzAhVGxhoKHb_XA_YQFnoECAYQAQ&url=https%3A%2F%2Fgithub.com%2Fbrannondorsey%2Fnaive-hashcat%2Freleases%2Fdownload%2Fdata%2Frockyou.txt&usg=AOvVaw3snAERl1mU6Ccr4WFEazBd).
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkThroughs/thm/Brute_It]
@@ -251,6 +251,6 @@ THM{pr1v1l3g3_3sc4l4t10n}
 Root flag: `THM{pr1v1l3g3_3sc4l4t10n}`
 
 # D0N3! ; )
-Thanks to creators and hoped you had fun.
+Thanks to the creators of this box and hope you had fun!
 
 Have a good one! : )
