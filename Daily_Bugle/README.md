@@ -53,7 +53,7 @@ Now we can move on with the enumeration. I ran gobuster and found many directori
 	* This is a simple and powerful web server application and it requires a server with PHP and either MySQL, PostgreSQL or SQL Server to run.
 ~~~
 
-Running `joomscan` wiuld reveal the full version which is 3.7.0:
+Running `joomscan` will reveal the full version which is 3.7.0:
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/thm/dailyBugle]
