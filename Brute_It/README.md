@@ -127,7 +127,7 @@ Admin's creds: `admin:xavier`
 
 After logging in to admin panel we are shown the web flag:
 
-![alt text](./files/webFlag.png)
+<p><img src="./files/webFlag.png"></p>
 
 Web flag: `THM{brut3_f0rce_is_e4sy}`
 
