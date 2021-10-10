@@ -30,7 +30,7 @@ PORT     STATE SERVICE VERSION
 
 I start with enumerating the web page. Right after opening the web page we see a title saying "Spider-Man robs bank!" which is the answer of the first question.
 
-![alt text](./files/task1.png)
+<p align="center"><img src="./files/task1.png"></p>
 
 Who robbed the bank: `Spiderman`
 
