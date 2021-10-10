@@ -124,7 +124,7 @@ First we downlaod the attached file (secretaudio.wav). We know that there is a h
 
 First we open the file from the tollbar. Then we go to "Layer" section and choose "Add Spectrogram". Then we zoom in to stretch it and now we can read the message inside it.
 
-<p><img src="./files/sonic_screenshot.png"></p>
+<p align="center"><img src="./files/sonic_screenshot.png"></p>
 
 Answer: `Super Secret Message`
 
