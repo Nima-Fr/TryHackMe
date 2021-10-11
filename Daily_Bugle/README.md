@@ -286,4 +286,4 @@ Root Flag: `eec3d53292b1821868266858d7fa6f79`
 
 Thanks to the creators of this room!
 
-Hope you had fun hacking adn have a good one!  : )
+Hope you had fun hacking and have a good one!  : )
