@@ -55,7 +55,11 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /index.html           (Status: 301) [Size: 0] [--> ./]
 ~~~
 
-After taking a look at them, I found an interesting js file in `/admin` directory which is a login page for admins. You can find the file in `Debugger` section in inspect mode. Let's take a look at the last function in `login.js`.
+After taking a look at them, I found an interesting js file in `/admin` directory which is a login page for admins. You can find the file in `Debugger` section in inspect mode.
+
+<p align="center"><img src="./files/AP.png"></p>
+
+Let's take a look at the last function in `login.js`.
 
 ```js
 async function login() {
