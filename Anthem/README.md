@@ -145,6 +145,8 @@ First right click on it and choose `Properties` and go to `security` section. Th
 
 <p align="center"><img src="./files/perm.png"></p>
 
+Now save the changes and now we can read the file which is admin's password:
+
 <p align="center"><img src="./files/passwd.png"></p>
 
 Admin's password: `ChangeMeBaby1MoreTime`
