@@ -20,7 +20,7 @@ Answer: `FTP`
 
 ## 1.2 - There is a very popular tool by Van Hauser which can be used to brute force a series of services. What is the name of this tool?
 
-If you check the following streams, you realize that the attacker tried to brute-force the password for a user. The tool that the question is refering to is `Hydra` which is made by "Van Hauser" and is a popular tool for brute-forcing a series of services.
+If you check the following streams, you realize that the attacker tried to brute-force the password for a user. The tool that the question is refering to is [`Hydra`](https://github.com/vanhauser-thc/thc-hydra) which is made by "Van Hauser" and is a popular tool for brute-forcing a series of services.
 
 Answer: `Hydra`
 
