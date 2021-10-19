@@ -4,13 +4,13 @@
 
 Sharpening up your CTF skill with the collection. The first volume is designed for beginner.
 
-# [Task 1] Author note
+## [Task 1] Author note
 
 Just another random CTF room created by me. Well, the main objective of the room is to test your CTF skills. For your information, vol.1 consists of 20 tasks and all the challenges are extremely easy. Stay calm and Capture the flag. :)
 
 Note: All the challenges flag are formatted as `THM{flag}`, unless stated otherwise
 
-# [Task 2] What does the base said?
+## [Task 2] What does the base said?
 
 String: VEhNe2p1NTdfZDNjMGQzXzdoM19iNDUzfQ==
 
@@ -23,7 +23,7 @@ THM{ju57_d3c0d3_7h3_b453}
 
 Flag: `THM{ju57_d3c0d3_7h3_b453}`
 
-# [Task 3] Meta meta
+## [Task 3] Meta meta
 
 We are provided with `Findme.jpg`. After downloading it, just use `exiftool` and read the meta data. The flag is in front of the owner name:
 
@@ -64,7 +64,7 @@ Megapixels                      : 0.384
 
 Flag: `THM{3x1f_0r_3x17}`
 
-# [Task 4] Mon, are we going to be okay?
+## [Task 4] Mon, are we going to be okay?
 
 We are given a jpg file. Use `steghide` to extract the file hidden in there. We don't need a passphrase so just hit enter:
 
@@ -83,7 +83,7 @@ THM{500n3r_0r_l473r_17_15_0ur_7urn}
 
 Flag: `THM{500n3r_0r_l473r_17_15_0ur_7urn}`
 
-# [Task 5] Erm......Magick
+## [Task 5] Erm......Magick
 
 The flag is in the question. Just highlight the whole line and you'll see it:
 
@@ -91,7 +91,7 @@ The flag is in the question. Just highlight the whole line and you'll see it:
 
 Flag: `THM{wh173_fl46}`
 
-# [Task 6] QRrrrr
+## [Task 6] QRrrrr
 
 We are given a QR code. Jusy use your phone or an online QR code scanner. I used [this](https://webqr.com/) website.
 
@@ -99,7 +99,7 @@ We are given a QR code. Jusy use your phone or an online QR code scanner. I used
 
 Flag: `THM{qr_m4k3_l1f3_345y}`
 
-# [Task 7] Reverse it or read it?
+## [Task 7] Reverse it or read it?
 
 We are given an executable file. I used `strings` command to read the strings inside the file and the flag is there:
 ~~~
@@ -110,7 +110,7 @@ THM{345y_f1nd_345y_60}
 
 Flag: `THM{345y_f1nd_345y_60}`
 
-# [Task 8] Another decoding stuff
+## [Task 8] Another decoding stuff
 
 String: 3agrSy1CewF9v8ukcSkPSYm3oKUoByUpKG4L
 
@@ -118,7 +118,7 @@ We are given a base58 encoded string. You can use online tools to decode it. I u
 
 Flag: `THM{17_h45_l3553r_l3773r5}`
 
-# [Task 9] Left or right
+## [Task 9] Left or right
 
 string: MAF{atbe_max_vtxltk}
 
@@ -126,7 +126,7 @@ Obviously the letters are rotated, so it's some kind of ROT. By counting the fir
 
 Flag: `THM{hail_the_caesar}`
 
-# [Task 10] Make a comment
+## [Task 10] Make a comment
 
 Right click on the description of the task and inspect it and you can see the flag:
 
@@ -134,7 +134,7 @@ Right click on the description of the task and inspect it and you can see the fl
 
 Answer: `THM{4lw4y5_ch3ck_7h3_c0m3mn7}`
 
-# [Task 11] Can you fix it?
+## [Task 11] Can you fix it?
 
 We are given a corrupted png file and we need to fix it. I used `hexeditor` to do so. Just change the first 4 bits which are called "magic numbers" to `89 50 4E 47` and it's fixed. Save it and now you can display it.
 
@@ -148,7 +148,7 @@ File: spoil.png                                                         ASCII Of
 
 Flag: `THM{y35_w3_c4n}`
 
-# [Task 12] Read it
+## [Task 12] Read it
 
 This one takes a little bit a googling. Just head [here](https://www.reddit.com/r/tryhackme/comments/eizxaq/new_room_coming_soon/) and you can see the flag.
 
@@ -156,7 +156,7 @@ This one takes a little bit a googling. Just head [here](https://www.reddit.com/
 
 Flag: `THM{50c14l_4cc0un7_15_p4r7_0f_051n7}`
 
-# [Task 13] Spin my head
+## [Task 13] Spin my head
 
 Well this is called "Brainfuck language". You can decode it [here](https://www.dcode.fr/brainfuck-language).
 
@@ -164,7 +164,7 @@ Well this is called "Brainfuck language". You can decode it [here](https://www.d
 
 Flag: `THM{0h_my_h34d}`
 
-# [Task 14] An exclusive!
+## [Task 14] An exclusive!
 
 This is XOR encryption. You can decrypt it using a simple python code:
 
@@ -178,7 +178,7 @@ This is XOR encryption. You can decrypt it using a simple python code:
 
 Flag: `THM{3xclu51v3_0r}`
 
-# [Task 15] Binary walk
+## [Task 15] Binary walk
 
 We are given a jpg file with a file inside it. As the question suggests, I used `binwalk` to extract the file inside it:
 
@@ -203,7 +203,7 @@ THM{y0u_w4lk_m3_0u7}
 
 Flag: `THM{y0u_w4lk_m3_0u7}`
 
-# [Task 16] Darkness
+## [Task 16] Darkness
 
 The image we are given is a black picture, but there is somrthing hidden in it. Use "Blue plain 1" and it's visible.
 
@@ -211,13 +211,13 @@ The image we are given is a black picture, but there is somrthing hidden in it. 
 
 Flag: `THM{7h3r3_15_h0p3_1n_7h3_d4rkn355}`
 
-# [Task 17] A sounding QR
+## [Task 17] A sounding QR
 
 We are given a QR code again. After scanning it, we are given a "soundcloud" link which is an audio saying the letters of the flag. You can slow it down to understand the letters better.
 
 Flag: `THM{SOUNDINGQR}`
 
-# [Task 18] Dig up the past
+## [Task 18] Dig up the past
 
 For this one we have to dig through the past. There is a thing called [**"wayback machine"**](https://archive.org/web/). It is a digital archive of the World Wide Web and it keeps snapshots of websites. from different time periods. We are given the URL and the date, so let's look it up.
 
@@ -225,13 +225,13 @@ For this one we have to dig through the past. There is a thing called [**"waybac
 
 Flag: `THM{ch3ck_th3_h4ckb4ck}`
 
-# [Task 19] Uncrackable!
+## [Task 19] Uncrackable!
 
 For this one, we are given a **Vigenère cipher** but we don't have a key. We can find the key because we know the first part of the flag. Go to [CyberChef](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('')) and put `TRYHACKME` as the key. The result would be `THMTHMTHM{YEI_RVEWY_BHU_YQF}`. So the key is `THMTHMTHM`. Put this as the key and you'll get the flag.
 
 Flag: `TRYHACKME{YOU_FOUND_THE_KEY}`
 
-# [task 20] Small bases
+## [task 20] Small bases
 
 
 581695969015253365094191591547859387620042736036246486373595515576333693
@@ -247,7 +247,7 @@ We are given a series of number and we have to decode it. I'm gonna make it shor
 
 Flag: `THM{17_ju57_4n_0rd1n4ry_b4535}`
 
-# [Task 21]  Read the packet
+## [Task 21]  Read the packet
 
 We are provided with a pcap file. I ran `wireshark` and startedanalyzing the file. I found the flag in **"tcp.stream eq 42"**. Right click > Follow > HTTP Stream and here you go:
 
