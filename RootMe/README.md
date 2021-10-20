@@ -84,7 +84,7 @@ Now we try to uplaod the file again and it goes through:
 
 <p align="center"><img src="./files/accept.png"></p>
 
-Now we can start a listener and call the shell from `/uplaods`:
+Now we can start a listener and call the shell from `/uploads`:
 
 Listener:
 ~~~
