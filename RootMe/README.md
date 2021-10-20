@@ -4,13 +4,13 @@
 
 A ctf for beginners, can you root me?
 
-# [Task 2] Reconnaissance
+## [Task 2] Reconnaissance
 
 Let's start with an Nmap scan. The scan reveals two open ports:
 * 22 ssh
 * 80 http
 
-## Initial Scan
+### Initial Scan
 
 ~~~
 PORT   STATE SERVICE VERSION
@@ -37,7 +37,7 @@ Apache version: `2.4.29`
 
 Port 22 service: `SSH`
 
-## Web Enumeration
+### Web Enumeration
 
 Let's start with the webpage. The first thing I did, was running `gobuster` on the webpage and found two hidden directories:
 
@@ -67,7 +67,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 Hidden directory: `/panel`
 
-# [Task 3] Getting a Shell
+## [Task 3] Getting a Shell
 
 We can uplaod files from `/panel` and we can see the uploaded files in `/uploads`. Let's upload a [php reverse shell](https://github.com/pentestmonkey/php-reverse-shell) and see what happens. (Don't forget to change the IP to yours.)
 After uploading the file, it returns an error. It seems like the server doesn't accept the files with `php` extention:
@@ -128,7 +128,7 @@ THM{y0u_g0t_a_sh3ll}
 
 user.txt: `THM{y0u_g0t_a_sh3ll}`
 
-# [Task 4] Privilege escalation
+## [Task 4] Privilege escalation
 
 Now we need to escalate our privilege to obtain the root flag. The hint tells us to look for the files with SUID permission. So I ran the following command and one file stands out:
 
@@ -162,8 +162,10 @@ bash-4.4$ /usr/bin/python -c 'import os; os.execl("/bin/sh", "sh", "-p")'
 root
 ~~~
 
-And it works. We are root now, so let's go ahead and read the root flag in `/root`:
+### Root Flag
 
+And it works. We are root now, so let's go ahead and read the root flag in `/root`:
+\
 ~~~
 # cd /root
 # ls
