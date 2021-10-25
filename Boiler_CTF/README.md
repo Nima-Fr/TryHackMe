@@ -232,7 +232,7 @@ Let's go through some of the dead ends first:
 ┌──(user㉿Y0B01)-[~/…/walkthroughs/thm/Boiler_CTF/files]
 └─$ curl -s "http://$IP/joomla/_files/" | html2text
                   ****** VjJodmNITnBaU0JrWVdsemVRbz0K ******
-                                                                                                                      
+		  
 ┌──(user㉿Y0B01)-[~/…/walkthroughs/thm/Boiler_CTF/files]
 └─$ echo "VjJodmNITnBaU0JrWVdsemVRbz0K" | base64 -d | base64 -d
 Whopsie daisy
