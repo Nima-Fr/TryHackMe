@@ -130,13 +130,19 @@ User jake may run the following commands on brookly_nine_nine:
     (ALL) NOPASSWD: /usr/bin/less
 ~~~
 
-We have to ways of using thio. The first one is to simply run the following command and read the root flag:
+We have two ways of using this permission.
+
+### First way
+
+The first way is to simply run the following command and read the root flag:
 
 ~~~
 sudo less /root/root.txt
 ~~~
 
-Or we can fully go root because `less` allows us to run shell commands by entering `!` followed by a command. We can simply run `/bin/bash` and since we have ran it with sudo, it will spawn us a root shell. Let's see the steps:
+### Second way
+
+The second way is to fully go root, because `less` allows us to run shell commands by entering `!` followed by a command. We can simply run `/bin/bash` and since we have ran it with sudo, it will spawn us a root shell. Let's see the steps:
 
 First choose a random file to read (I chose user.txt) then run this command:
 
