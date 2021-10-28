@@ -114,7 +114,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /team.html            (Status: 200) [Size: 19868]
 ~~~
 
-`/secret` is the directory we're looking for. There is a filter that doesn't let us run commands but we can easily bypass it by adding `\` in the beginning or in the middle of the commands. For example I tried `\which \bash`
+`/secret` is the directory we're looking for. There is a filter that doesn't let us run commands but we can easily bypass it by adding `\` in the beginning or in the middle of the commands. For example I tried `\which \bash`:
 
 <p align="center"><img src="./files/bash.png"></p>
 
