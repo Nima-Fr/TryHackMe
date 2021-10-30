@@ -307,7 +307,7 @@ Will
 
 Ok. The note didn't give us anything new, so let's check the two scritps:
 
-cmd.py:
+#### cmd.py:
 ~~~py
 def get_command(num):
 	if(num == "1"):
@@ -318,7 +318,7 @@ def get_command(num):
 		return "cat /etc/passwd"
 ~~~
 
-will_script.py:
+#### will_script.py:
 ~~~py
 import os
 import sys
