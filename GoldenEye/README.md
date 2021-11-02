@@ -176,7 +176,7 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2021-10-31 10:12:
 
 Boris's pop3 password: `secret1!`
 
-I don't know if we need or not, but I found `natalya`'s password, the other user that we know:
+I don't know if we need or not, but I successfully brute-forced `natalya`'s password, the other user that we know:
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkthroughs/thm/GoldenEye]
@@ -220,7 +220,7 @@ No answer needed.
 
 ### 2.5 - What can you find on this service?
 
-I used `LIST` command to list the messages, which are basicly emails:
+I used `LIST` command to list the messages, which are emails:
 
 ~~~
 LIST
