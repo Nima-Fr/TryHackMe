@@ -154,7 +154,7 @@ sh-4.2$
 
 ## apache -> edward
 
-Now we need to escalate our privilege. I uploaded linpeas to the machine to find useful files for privesc. `wget` is not installed so I used `curl` to download it on the target machine:
+Now we need to escalate our privilege. I uploaded `linpeas` to the machine to find useful files for privesc. `wget` is not installed so I used `curl` to download it on the target machine:
 
 First start a server using python where the linpeas is located:
 ~~~
