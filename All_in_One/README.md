@@ -237,7 +237,7 @@ Now we are in admin panel and can edit the pages. i went to this address:
 
 This takes us to: http://10.10.142.56/wordpress/wp-admin/theme-editor.php?file=404.php&theme=twentytwenty
 
-Now the only thing to do, is to replace the 404.php code with a [PHP reverse shell](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php) (or you can find it in files folder). Don't forget to change the IP to your IP and the port, to the port you want to get the reverse shell on. When you are done, click "Upadte File".
+Now the only thing to do, is to replace the 404.php code with a [PHP reverse shell](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php). Don't forget to change the IP to your IP and the port, to the port you want to get the reverse shell on. When you are done, click "Upadte File".
 
 Then start a listener (`rlwrap nc -lvnp 4444`) and navigate to http://10.10.142.56/wordpress/wp-content/themes/twentytwenty/404.php and now we have a shell:
 
