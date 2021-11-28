@@ -205,7 +205,7 @@ Flag: `THM{y0u_w4lk_m3_0u7}`
 
 ## [Task 16] Darkness
 
-The image we are given is a black picture, but there is somrthing hidden in it. Use "Blue plain 1" and it's visible.
+The image we are given is a black picture, but there is something hidden in it. Use `stegsolver` with "Blue plain 1" and it's visible:
 
 <p align="center"><img src="./files/task16.png"></p>
 
