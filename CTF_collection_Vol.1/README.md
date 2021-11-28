@@ -93,7 +93,7 @@ Flag: `THM{wh173_fl46}`
 
 ## [Task 6] QRrrrr
 
-We are given a QR code. Jusy use your phone or an online QR code scanner. I used [this](https://webqr.com/) website.
+We are given a QR code. Jusy use your phone or an online QR code scanner. I used [this](https://webqr.com/) website:
 
 <p align="center"><img src="./files/task6.png"></p>
 
@@ -114,7 +114,7 @@ Flag: `THM{345y_f1nd_345y_60}`
 
 String: 3agrSy1CewF9v8ukcSkPSYm3oKUoByUpKG4L
 
-We are given a base58 encoded string. You can use online tools to decode it. I used [CyberChef](https://gchq.github.io/CyberChef/).
+We are given a base58 encoded string. You can use online tools to decode it. I used [CyberChef](https://gchq.github.io/CyberChef/):
 
 Flag: `THM{17_h45_l3553r_l3773r5}`
 
@@ -122,7 +122,7 @@ Flag: `THM{17_h45_l3553r_l3773r5}`
 
 string: MAF{atbe_max_vtxltk}
 
-Obviously the letters are rotated, so it's some kind of ROT. By counting the first letter (M) to what it actually is (T), we find out that it is ROT7. I used [this](https://rot13.com/) website to rotate the letters.
+Obviously the letters are rotated, so it's some kind of ROT. By counting the first letter (M) to what it actually is (T), we find out that it is ROT7. I used [this](https://rot13.com/) website to rotate the letters:
 
 Flag: `THM{hail_the_caesar}`
 
@@ -136,7 +136,7 @@ Answer: `THM{4lw4y5_ch3ck_7h3_c0m3mn7}`
 
 ## [Task 11] Can you fix it?
 
-We are given a corrupted png file and we need to fix it. I used `hexeditor` to do so. Just change the first 4 bits which are called "magic numbers" to `89 50 4E 47` and it's fixed. Save it and now you can display it.
+We are given a corrupted png file and we need to fix it. I used `hexeditor` to do so. Just change the first 4 bits which are called "magic numbers" to `89 50 4E 47` and it's fixed. Save it and now you can open it:
 
 ~~~
 File: spoil.png                                                         ASCII Offset: 0x00000004 / 0x00011466 (%00)  M
@@ -150,7 +150,7 @@ Flag: `THM{y35_w3_c4n}`
 
 ## [Task 12] Read it
 
-This one takes a little bit a googling. Just head [here](https://www.reddit.com/r/tryhackme/comments/eizxaq/new_room_coming_soon/) and you can see the flag.
+This one takes a little bit a googling. Just head [here](https://www.reddit.com/r/tryhackme/comments/eizxaq/new_room_coming_soon/) and you can see the flag:
 
 <p align="cneter"><img src="./files/task12.png"></p>
 
@@ -158,7 +158,7 @@ Flag: `THM{50c14l_4cc0un7_15_p4r7_0f_051n7}`
 
 ## [Task 13] Spin my head
 
-Well this is called "Brainfuck language". You can decode it [here](https://www.dcode.fr/brainfuck-language).
+Well this is called "Brainfuck language". You can decode it [here](https://www.dcode.fr/brainfuck-language):
 
 <p align="center"><img src="./files/task13.png"></p>
 
@@ -213,13 +213,13 @@ Flag: `THM{7h3r3_15_h0p3_1n_7h3_d4rkn355}`
 
 ## [Task 17] A sounding QR
 
-We are given a QR code again. After scanning it, we are given a "soundcloud" link which is an audio saying the letters of the flag. You can slow it down to understand the letters better.
+We are given a QR code again. After scanning it, we are given a "soundcloud" link which is an audio saying the letters of the flag. You can slow it down to understand the letters better:
 
 Flag: `THM{SOUNDINGQR}`
 
 ## [Task 18] Dig up the past
 
-For this one we have to dig through the past. There is a thing called [**"wayback machine"**](https://archive.org/web/). It is a digital archive of the World Wide Web and it keeps snapshots of websites. from different time periods. We are given the URL and the date, so let's look it up.
+For this one we have to dig through the past. There is a thing called [**"wayback machine"**](https://archive.org/web/). It is a digital archive of the World Wide Web and it keeps snapshots of websites. from different time periods. We are given the URL and the date, so let's look it up:
 
 <p align="center"><img src="./files/task18.png"></p>
 
@@ -227,7 +227,7 @@ Flag: `THM{ch3ck_th3_h4ckb4ck}`
 
 ## [Task 19] Uncrackable!
 
-For this one, we are given a **Vigenère cipher** but we don't have a key. We can find the key because we know the first part of the flag. Go to [CyberChef](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('')) and put `TRYHACKME` as the key. The result would be `THMTHMTHM{YEI_RVEWY_BHU_YQF}`. So the key is `THMTHMTHM`. Put this as the key and you'll get the flag.
+For this one, we are given a **Vigenère cipher** but we don't have a key. We can find the key because we know the first part of the flag. Go to [CyberChef](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('')) and put `TRYHACKME` as the key. The result would be `THMTHMTHM{YEI_RVEWY_BHU_YQF}`. So the key is `THMTHMTHM`. Put this as the key and you'll get the flag:
 
 Flag: `TRYHACKME{YOU_FOUND_THE_KEY}`
 
@@ -236,7 +236,7 @@ Flag: `TRYHACKME{YOU_FOUND_THE_KEY}`
 
 581695969015253365094191591547859387620042736036246486373595515576333693
 
-We are given a series of number and we have to decode it. I'm gonna make it short for you. I used the following python code to decode it.
+We are given a series of number and we have to decode it. I'm gonna make it short for you. I used the following python code to decode it:
 
 ~~~py
 >>> n = 581695969015253365094191591547859387620042736036246486373595515576333693
@@ -257,8 +257,8 @@ Flag: `THM{d0_n07_574lk_m3}`
 
 # D0N3! ; )
 
-Thanks to the creator!
+Thanks to the creator(s)!
 
 Hope you had fun and leaned something!
 
-Make it a good one! : )
+Make it a g00d one! : )
