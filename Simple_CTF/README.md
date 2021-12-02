@@ -9,6 +9,7 @@ Deploy the machine and attempt the questions!
 # Initial Scan
 
 Let's start with an Nmap scan. The scan reveals three open ports:
+
 * 21 ftp
 * 80 http
 * 2222 ssh
@@ -52,7 +53,7 @@ Higher port service: `SSH`
 
 We don't even need to browse the webpage to exploit this machine, but we have questions to answer, so here we go.
 
-I ran `gobuster` on the webpage and found `/simple`.
+I ran `gobuster` on the webpage and found `/simple`:
 
 ~~~
 ┌──(user㉿Y0B01)-[~/Desktop/walkthroughs/thm/Simple_CTF]
@@ -74,7 +75,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 /simple               (Status: 301)
 ~~~
 
-By navigating to this directory, we face the defaul page for CMS Made Simple. If you scroll down the page, we can see the version.
+By navigating to this directory, we face the defaul page for CMS Made Simple. If you scroll down the page, we can see the version:
 
 <p align="center"><img src="./files/CMS.png"></p>
 
@@ -152,7 +153,7 @@ ftp> exit
 221 Goodbye.
 ~~~
 
-The file is a note for user `mitch` and the sender is complaining about mitch's weak password.
+The file is a note for user `mitch` and the sender is complaining about mitch's weak password:
 
 ~~~
 ┌──(user㉿Y0B01)-[~/…/walkthroughs/thm/Simple_CTF/files]
@@ -237,7 +238,7 @@ Other user: `sunbath`
 
 ## Becoming root
 
-Now we need to gain root access, in order to read the root flag. I ran `sudo -l` to check my sudo permissions.
+Now we need to gain root access, in order to obtain the root flag. I ran `sudo -l` to check my sudo permissions:
 
 ~~~
 mitch@Machine:~$ sudo -l
