@@ -54,7 +54,7 @@ For this one, we should copy the password hashes and try to crack them ourselves
 
 <p align="center"><img src="./files/shadow.png"></p>
 
-I copied the hashes and started cracking them using `john` and `fasttrack` wordlist:
+I copied the password hashes and started cracking them using `john` and `fasttrack` wordlist:
 
 ~~~
 ┌──(user㉿Y0B01)-[~/…/walkthroughs/thm/Overpass2-Hacked/files]
