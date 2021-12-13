@@ -1,3 +1,2 @@
 # TryHackMe
-Beginner friendly-ish walkthroughs on tryhackme challenges
-""\\\_( ' _ ' )_/""
+Beginner friendly-ish walkthroughs on tryhackme rooms.
