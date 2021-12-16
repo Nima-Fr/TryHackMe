@@ -21,7 +21,7 @@ PORT      STATE SERVICE VERSION
 | ftp-syst: 
 |   STAT: 
 | FTP server status:
-|      Connected to ::ffff:10.9.4.143
+|      Connected to ::ffff:10.9.**.**
 |      Logged in as ftp
 |      TYPE: ASCII
 |      No session bandwidth limit
@@ -138,7 +138,7 @@ We know that john's password has been set to default, so I tried some default pa
 
 ## Reverse shell
 
-Now that we have creds, we can use the exploits. I'm gonna leave the code in the files folder for you guys, so you can use it if you couldn't find it yourself.
+Now that we have creds, we can use the exploits. I'm gonna leave the exploit [here](https://github.com/Nima-Fr/TryHackMe/blob/main/IDE/files/exploit.py) for you guys, in case you couldn't find it yourself.
 
 First run the exploit as shown below. The exploit needs the url, username, password, and listening host and porn plus the platform:
 
