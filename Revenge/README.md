@@ -134,7 +134,7 @@ def product(product_id):
     with eng.connect() as con:
         # Executes the SQL Query
         # This should be the vulnerable portion of the application
-        rs = con.execute(f"SELECT * FROM product WHERE id={product_id}")
+        rs = con.execute(f"SELECT * FROM product WHERE id={product_id}")   # <----------
         product_selected = rs.fetchone()  # Returns the entire row in a list
     return render_template('product.html', title=product_selected[1], result=product_selected)
 ~~~
