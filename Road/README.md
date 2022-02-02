@@ -97,7 +97,7 @@ After doing so, just click on "EDIT PROFILE" and the reverse shell will be uploa
 
 I originally found it using `burp`, but we can also find it in the source code of `/v2/profile.php` in a comment:
 
-~~~html
+~~~
 └─$ curl -s "http://10.10.237.166/v2/profile.php" | grep "v2/p" 
 <!-- /v2/profileimages/ -->
 ~~~
