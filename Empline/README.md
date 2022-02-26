@@ -10,6 +10,8 @@ Get all the flags to complete the room.
 
 Room link: https://tryhackme.com/room/empline
 
+**Note:** All the passwords, hashes, and flags are redacted to encourage you to do this challenge yourself! <3
+
 ## Initial Scan
 
 As always, Let's start with a full port Nmap scan. The scan reveals three open ports:
