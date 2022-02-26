@@ -8,6 +8,10 @@ Happy Hunting!
 
 Tip: Enumeration is key!
 
+Room link: https://tryhackme.com/room/plottedtms
+
+**Note:** All the hashes, passwords, and flags are redacted, so you can experience doing this challenge yourself! <3
+
 ## Initial Scan
 
 As always starting with a full port Nmap scan. The scan reveals three open ports:
