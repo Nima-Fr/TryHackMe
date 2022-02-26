@@ -8,6 +8,8 @@ Deploy and compromise the machine!
 
 Get all the flags to complete the room.
 
+Room link: https://tryhackme.com/room/empline
+
 ## Initial Scan
 
 As always, Let's start with a full port Nmap scan. The scan reveals three open ports:
